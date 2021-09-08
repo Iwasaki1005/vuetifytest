@@ -1,14 +1,15 @@
 
+//module.exports = {
+//	configureWebpack: {
+//	  devServer: {
+//		watchOptions: {
+//		  poll: true
+//		}
+//	  }
+//	},
+//}
 module.exports = {
-	configureWebpack: {
-	  devServer: {
-		watchOptions: {
-		  poll: true
-		}
-	  }
-	},
-	//
 	publicPath: process.env.NODE_ENV === 'production'
-    ? '/weather-app/'   //任意
-    : '/'
+	  ? '/weather-app/'   //任意
+	  : '/'
 }
