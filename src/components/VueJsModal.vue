@@ -1,24 +1,11 @@
 <template>
-<div>
-	<button v-on:click="show" class="button bt-s">show!</button>
-	<modal name="hello-world" :draggable="true" :resizable="true" @before-close="beforeClose">
-		<div class="modal-header">
-			<h2>Modal title</h2>
-		</div>
-		<div class="modal-body">
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
-			<p>you're reading this text in a modal!</p>
+	<div id="modal1" v-on:click="mostzi1">
+		<button v-on:click="show" class="button bt-s">show!</button>
+		<modal name="hello-world" @opened="Open1" :draggable="true" :resizable="true" v-on:click="mostzi1">
+			<span>Hello,1!</span>
 			<button v-on:click="hide">閉じる</button>
-		</div>  
-	</modal>
-</div>
+		</modal>
+	</div>
 </template>
 
 <script>
@@ -31,13 +18,27 @@ export default {
     hide : function () {
       this.$modal.hide('hello-world');
     },
-    beforeClose (event) {
-      console.log('Closing...')
-      // What a gamble... 50% chance to cancel closing
-      if (Math.random() < 0.5) {
-        event.cancel()
-      }
-    }
+	Open1 () {
+      let modal1 = document.getElementById('modal1');
+      let modal2 = document.getElementById('modal2');
+      let modal3 = document.getElementById('modal3');
+      modal1.classList.add("zi-most");
+      modal2.classList.remove("zi-most");
+      modal2.classList.add("zi-other");
+      modal3.classList.remove("zi-most");
+      modal3.classList.add("zi-other");
+    },
+	mostzi1 () {
+      let modal1 = document.getElementById('modal1');
+      let modal2 = document.getElementById('modal2');
+      let modal3 = document.getElementById('modal3');
+      modal1.classList.remove("zi-other");
+      modal2.classList.remove("zi-most");
+      modal3.classList.remove("zi-most");
+      modal1.classList.add("zi-most");
+      modal2.classList.add("zi-other");
+      modal3.classList.add("zi-other");
+	}
   },
 }
 </script>
@@ -55,5 +56,15 @@ export default {
 	width: 200px;
 	height: 100px;
 	background-color: rgb(224, 156, 156);
+}
+</style>
+
+
+<style>
+.zi-most {
+	z-index: 100!important;
+}
+.zi-other {
+	z-index: 10!important;
 }
 </style>

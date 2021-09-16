@@ -5,12 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -d dist"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-js-modal": "^2.0.1",
+    "vue-tweet-embed": "^2.4.0",
     "vuetify": "^2.5.8"
   },
   "devDependencies": {
@@ -21,7 +22,6 @@
     "deepmerge": "^4.2.2",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
-    "gh-pages": "^3.2.3",
     "sass": "^1.32.13",
     "sass-loader": "^12.1.0",
     "vue-template-compiler": "^2.6.11"
