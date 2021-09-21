@@ -8,6 +8,12 @@
 			<!--<VueJsModalSmaple4 />
 			<VueJsModalSmaple5 />-->
 		</div>
+
+		<!-- スタイル表示ボタン -->
+		<button @click="click">アイテム表示ボタン</button>
+		<div v-if="show"><Modal1Style /></div>
+		<!-- 切替ボタン -->
+
 		<v-card class="mx-auto">
 				<v-card-title>
 					<v-icon large left color="#26c6da">mdi-twitter</v-icon>
@@ -65,6 +71,7 @@ import VueJsModalSmaple3 from './components/VueJsModal_sample3.vue'
 //import Carousels2 from './components/Carousels2.vue'
 //import ShopHeader from './components/Shop_header.vue'
 //import Lazytest from './components/Lazytest.vue'
+import Modal1Style from './components/Modal1_style.vue'
 
 export default {
   name: 'App',
@@ -84,6 +91,7 @@ export default {
 	//Carousels2,
 	//Lazytest,
 	//ShopHeader,
+	Modal1Style,
   },
   mounted: function() {
 	/*--------------------------------------------------------------------------
@@ -95,6 +103,16 @@ export default {
 		let tweetScript = document.createElement('script')
 		tweetScript.setAttribute('src', 'https://platform.twitter.com/widgets.js')
 		document.head.appendChild(tweetScript)
+  },
+  data() {
+    return {
+      show: "true",
+    }
+  },
+  methods: {
+    click: function () {
+      this.show = !this.show;
+    }
   },
 }
 </script>

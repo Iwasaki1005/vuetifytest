@@ -1,9 +1,10 @@
 <template>
-	<div id="modal1" v-on:click="mostzi1">
+	<div id="modal1" class="" v-on:click="mostzi1">
 		<button v-on:click="show" class="button bt-s">show!</button>
 		<modal name="hello-world" @opened="Open1" :draggable="true" :resizable="true" v-on:click="mostzi1">
 			<span>Hello,1!</span>
 			<button v-on:click="hide">閉じる</button>
+			<button v-on:click="aaaaa" class="button bt-s">フルスクリーン</button>
 		</modal>
 	</div>
 </template>
@@ -17,6 +18,10 @@ export default {
     },
     hide : function () {
       this.$modal.hide('hello-world');
+    },
+	aaaaa : function () {
+      let modal1 = document.getElementById('modal1');
+      modal1.classList.add("modallluuu");
     },
 	Open1 () {
       let modal1 = document.getElementById('modal1');
@@ -38,7 +43,7 @@ export default {
       modal1.classList.add("zi-most");
       modal2.classList.add("zi-other");
       modal3.classList.add("zi-other");
-	}
+	},
   },
 }
 </script>
@@ -66,5 +71,12 @@ export default {
 }
 .zi-other {
 	z-index: 10!important;
+}
+
+.modallluuu .vm--modal {
+	top: 0!important;
+	left: 0!important;
+	width: 100vw!important;
+	height: 100vh!important;
 }
 </style>
