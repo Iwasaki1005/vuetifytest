@@ -4,7 +4,7 @@
 		<modal name="hello-world" @opened="Open1" :draggable="true" :resizable="true" v-on:click="mostzi1">
 			<span>Hello,1!</span>
 			<button v-on:click="hide">閉じる</button>
-			<button v-on:click="aaaaa" class="button bt-s">フルスクリーン</button>
+			<button v-on:click="modal1full">フルスクリーン</button>
 		</modal>
 	</div>
 </template>
@@ -19,9 +19,14 @@ export default {
     hide : function () {
       this.$modal.hide('hello-world');
     },
-	aaaaa : function () {
+	modal1full : function () {
       let modal1 = document.getElementById('modal1');
-      modal1.classList.add("modallluuu");
+      if (modal1.classList.contains('modalfull') == false ) {
+        modal1.classList.add("modalfull");
+      }
+      else {
+        modal1.classList.remove("modalfull");
+      }
     },
 	Open1 () {
       let modal1 = document.getElementById('modal1');
@@ -73,7 +78,7 @@ export default {
 	z-index: 10!important;
 }
 
-.modallluuu .vm--modal {
+.modalfull .vm--modal {
 	top: 0!important;
 	left: 0!important;
 	width: 100vw!important;
