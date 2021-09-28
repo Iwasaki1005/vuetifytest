@@ -1,9 +1,14 @@
 <template>
 	<div id="modal2" v-on:click="mostzi2">
 		<button v-on:click="show" class="button bt-s">show!</button>
-		<modal name="example" id="modal2" @opened="Open2" :clickToClose="false" :draggable="true" v-on:click="mostzi2">
-			<span>Hello, {{ name }}!</span>
-			<button v-on:click="hide">閉じる</button>
+		<modal name="example" id="modal2naka" @opened="Open2" :clickToClose="false"  :resizable="true" :draggable="true" v-on:click="mostzi2">
+			<div>
+				<span>Hello, {{ name }}!</span>
+				<button v-on:click="hide">閉じる</button>
+			</div>
+			<div class="youtube">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/QxfKBGlhksM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 		</modal>
 	</div>
 </template>
@@ -32,6 +37,41 @@ export default {
       modal3.classList.add("zi-other");
       modal1.classList.remove("zi-most");
       modal1.classList.add("zi-other");
+      var startY = null;
+      var startX = null;
+      var endY = null;
+      var endX = null;
+      window.addEventListener('load', function(){
+        // スワイプ／フリック
+        document.getElementByquerySelector("vm--modal").addEventListener('touchmove', logSwipe);
+        // タッチ開始
+        document.getElementByquerySelector("vm--modal").addEventListener('touchstart', logSwipeStart);
+        // タッチ終了
+        document.getElementByquerySelector("vm--modal").addEventListener('touchend', logSwipeEnd);
+      });
+      function logSwipeStart(event) {
+          event.preventDefault();
+          startY = event.touches[0].pageY;
+          startX = event.touches[0].pageX;
+      }
+      function logSwipe(event) {
+        event.preventDefault();
+        endY = event.touches[0].pageY;
+		endX = event.touches[0].pageX;
+      }
+      function logSwipeEnd(event) {
+        event.preventDefault();
+        if( 0 < (endY - startY) ) {
+          console.log("下向き");
+        } else {
+          console.log("上向き");
+        }
+        if( 0 < (endX - startX) ) {
+          console.log("右向き");
+        } else {
+          console.log("左向き");
+        }
+      }
     },
 	mostzi2 () {
       let modal1 = document.getElementById('modal1');
@@ -54,5 +94,14 @@ export default {
 	width: 200px;
 	height: 100px;
 	background-color: rgb(217, 224, 156);
+}
+
+.youtube {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.youtube iframe {
+  width: 100%;
+  height: 100%;
 }
 </style>

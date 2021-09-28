@@ -1,6 +1,7 @@
 <template>
   <div id="app">
 	<v-app>
+		<Swipetest />
 		<div class="buttons-vm">
 			<VueJsModal />
 			<VueJsModalSmaple2 />
@@ -8,12 +9,6 @@
 			<!--<VueJsModalSmaple4 />
 			<VueJsModalSmaple5 />-->
 		</div>
-
-		<!-- スタイル表示ボタン -->
-		<button @click="click">アイテム表示ボタン</button>
-		<div v-if="show"><Modal1Style /></div>
-		<!-- 切替ボタン -->
-
 		<v-card class="mx-auto">
 				<v-card-title>
 					<v-icon large left color="#26c6da">mdi-twitter</v-icon>
@@ -30,7 +25,7 @@
 		<div class="main-content">
 			<VuetifySlider />
 		</div>
-		<v-content class="main-content">
+		<v-main class="main-content">
 			<VuetifyPankuzu />
 			<v-layout wrap align-content-space-between>
 				<v-flex class="p80">
@@ -45,7 +40,7 @@
 					<VuetifySidebar />
 				</v-flex>
 			</v-layout>
-		</v-content>
+		</v-main>
 	</v-app>
 	<!--<ShopHeader />
 	<Carousels2 />
@@ -71,7 +66,7 @@ import VueJsModalSmaple3 from './components/VueJsModal_sample3.vue'
 //import Carousels2 from './components/Carousels2.vue'
 //import ShopHeader from './components/Shop_header.vue'
 //import Lazytest from './components/Lazytest.vue'
-import Modal1Style from './components/Modal1_style.vue'
+import Swipetest from './components/Swipetest.vue'
 
 export default {
   name: 'App',
@@ -91,7 +86,7 @@ export default {
 	//Carousels2,
 	//Lazytest,
 	//ShopHeader,
-	Modal1Style,
+	Swipetest,
   },
   mounted: function() {
 	/*--------------------------------------------------------------------------

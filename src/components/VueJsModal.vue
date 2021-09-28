@@ -37,6 +37,34 @@ export default {
       modal2.classList.add("zi-other");
       modal3.classList.remove("zi-most");
       modal3.classList.add("zi-other");
+
+      // ここからスワイプ //
+//      var startY = null;
+//      var endY = null;
+//        window.addEventListener('load', function(){
+//          // スワイプ／フリック
+//          document.getElementById("content1").addEventListener('touchmove', logSwipe);
+//          // タッチ開始
+//          document.getElementById("content1").addEventListener('touchstart', logSwipeStart);
+//          // タッチ終了
+//          document.getElementById("content1").addEventListener('touchend', logSwipeEnd);
+//        });
+//        function logSwipeStart(event) {
+//          event.preventDefault();
+//          startY = event.touches[0].pageY;
+//        }
+//        function logSwipe(event) {
+//          event.preventDefault();
+//          endY = event.touches[0].pageY;
+//        }
+//        function logSwipeEnd(event) {
+//          event.preventDefault();
+//          if( 0 < (endY - startY) ) {
+//            console.log("下向き");
+//         } else {
+//              console.log("上向き");
+//          }
+//        }
     },
 	mostzi1 () {
       let modal1 = document.getElementById('modal1');
