@@ -1,9 +1,12 @@
 <template>
 	<div id="modal3" v-on:click="mostzi3">
-		<button v-on:click="show"  class="button bt-s">show!</button>
-		<modal name="example3" id="modal3" @opened="Open3" :clickToClose="false" :draggable="true">
+		<button v-on:click="show"  class="button bt-s">Youtube動画(縦長)</button>
+		<modal name="example3" id="modal3" @opened="Open3" :clickToClose="false" :resizable="true" :draggable="true" :scrollable="true">
 			<span>Hello,3!</span>
 			<button v-on:click="hide">閉じる</button>
+			<div class="youtubeshorts">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/7p-OYEQaoaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
 		</modal>
 	</div>
 </template>
@@ -71,5 +74,15 @@ export default {
 	height: 0.1%!important;
     min-height: 0.1%!important;
 	z-index: 1!important;
+}
+
+.youtubeshorts {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+}
+
+.youtubeshorts iframe {
+  width: 100%;
+  height: 100%;
 }
 </style>

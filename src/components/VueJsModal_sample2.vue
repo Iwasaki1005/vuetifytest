@@ -1,12 +1,13 @@
 <template>
 	<div id="modal2" v-on:click="mostzi2">
-		<button v-on:click="show" class="button bt-s">show!</button>
-		<modal name="example" id="modal2naka" @opened="Open2" :clickToClose="false"  :resizable="true" :draggable="true" v-on:click="mostzi2">
-			<div>
+		<button v-on:click="show" class="button bt-s">Youtube動画(通常)</button>
+		<modal name="example" id="modal2naka" @opened="Open2" :resizable="true" :draggable="true" :scrollable="true" v-on:click="mostzi2">
+			<div class="tube-head">
 				<span>Hello, {{ name }}!</span>
 				<button v-on:click="hide">閉じる</button>
 			</div>
 			<div class="youtube">
+			<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/t3tm8iNlwIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/QxfKBGlhksM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</modal>
@@ -99,9 +100,16 @@ export default {
 .youtube {
   width: 100%;
   aspect-ratio: 16 / 9;
+  z-index: 10;
 }
 .youtube iframe {
   width: 100%;
   height: 100%;
+}
+
+.tube-head {
+	position: sticky;
+	top: 0;
+	z-index: 20;
 }
 </style>

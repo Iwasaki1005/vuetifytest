@@ -1,7 +1,7 @@
 <template>
 	<div id="modal1" class="" v-on:click="mostzi1">
 		<button v-on:click="show" class="button bt-s">show!</button>
-		<modal name="hello-world" @opened="Open1" :draggable="true" :resizable="true" v-on:click="mostzi1">
+		<modal name="hello-world" @opened="Open1" :draggable="true" :resizable="true" :scrollable="true" v-on:click="mostzi1">
 			<span>Hello,1!</span>
 			<button v-on:click="hide">閉じる</button>
 			<button v-on:click="modal1full">フルスクリーン</button>
