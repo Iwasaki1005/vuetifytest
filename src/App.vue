@@ -1,6 +1,7 @@
 <template>
   <div id="app">
 	<v-app>
+		<CommerceTag />
 		<Swipetest />
 		<div class="buttons-vm">
 			<VueJsModal />
@@ -67,6 +68,7 @@ import VueJsModalSmaple3 from './components/VueJsModal_sample3.vue'
 //import ShopHeader from './components/Shop_header.vue'
 //import Lazytest from './components/Lazytest.vue'
 import Swipetest from './components/Swipetest.vue'
+import CommerceTag from './components/Commerce_tag.vue'
 
 export default {
   name: 'App',
@@ -87,6 +89,7 @@ export default {
 	//Lazytest,
 	//ShopHeader,
 	Swipetest,
+	CommerceTag,
   },
   mounted: function() {
 	/*--------------------------------------------------------------------------
