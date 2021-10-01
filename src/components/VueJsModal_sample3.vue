@@ -1,9 +1,9 @@
 <template>
 	<div id="modal3" v-on:click="mostzi3">
-		<button v-on:click="show"  class="button bt-s">Youtube動画(縦長)</button>
+		<button v-on:click="show3"  class="button bt-s">Youtube動画(縦長)</button>
 		<modal name="example3" id="modal3" @opened="Open3" :clickToClose="false" :resizable="true" :draggable="true" :scrollable="true">
 			<span>Hello,3!</span>
-			<button v-on:click="hide">閉じる</button>
+			<button v-on:click="hide3">閉じる</button>
 			<div class="youtubeshorts">
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/7p-OYEQaoaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -15,10 +15,10 @@
 export default {
   name: 'VueJsModalSmaple3',
   methods: {
-    show : function() {
+    show3 : function() {
       this.$modal.show('example3');
     },
-    hide : function () {
+    hide3 : function () {
       this.$modal.hide('example3');
     },
 	Open3 () {

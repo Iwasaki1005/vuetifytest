@@ -1,10 +1,10 @@
 <template>
 	<div id="modal2" v-on:click="mostzi2">
-		<button v-on:click="show" class="button bt-s">Youtube動画(通常)</button>
+		<button v-on:click="show2" class="button bt-s">Youtube動画(通常)</button>
 		<modal name="example" id="modal2naka" @opened="Open2" :resizable="true" :draggable="true" :scrollable="true" v-on:click="mostzi2">
 			<div class="tube-head">
 				<span>Hello, {{ name }}!</span>
-				<button v-on:click="hide">閉じる</button>
+				<button v-on:click="hide2">閉じる</button>
 			</div>
 			<div class="youtube">
 			<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/t3tm8iNlwIk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
@@ -23,10 +23,10 @@ export default {
     }
   },
   methods: {
-    show : function() {
+    show2 : function() {
       this.$modal.show('example');
     },
-    hide : function () {
+    hide2 : function () {
       this.$modal.hide('example');
     },
 	Open2 () {
