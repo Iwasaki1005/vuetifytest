@@ -28,11 +28,6 @@
 		</div>
 		<v-main class="main-content">
 			<VuetifyPankuzu />
-			<v-layout wrap align-content-space-between>
-				<v-flex class="p20">
-					<VuetifySidebar />
-				</v-flex>
-			</v-layout>
 		</v-main>
 	</v-app>
 	<!--<ShopHeader />
@@ -44,7 +39,6 @@
 import VuetifySlider from './components/Vuetify_slider.vue'
 import VuetifyHeader from './components/Vuetify_header.vue'
 import VuetifyPankuzu from './components/Vuetify_pankuzu.vue'
-import VuetifySidebar from './components/Vuetify_sidebar.vue'
 import VueJsModal from './components/VueJsModal.vue'
 import VueJsModalSmaple2 from './components/VueJsModal_sample2.vue'
 import VueJsModalSmaple3 from './components/VueJsModal_sample3.vue'
@@ -61,7 +55,6 @@ export default {
 	VuetifyHeader,
 	VuetifyPankuzu,
 	VuetifySlider,
-	VuetifySidebar,
 	VueJsModal,
 	VueJsModalSmaple2,
 	VueJsModalSmaple3,

@@ -43,70 +43,60 @@
 			
 
 		<v-slide-group multiple show-arrows>
-		<!-- いらすとや1 男の子 女の子 複数人 -->
-		<transition name="bounce">
-		<div key="hoge" v-if="ontag.includes('yanky')"></div>
-		<div key="huga" v-else class="illust-div bgil-1"  v-on:click="show2">
-			<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
-			<div style="margin-left: 1rem;">#男の子 #女の子 #複数人</div>
-			<div style="color: red; margin-left: 1rem;">※クリックで動画が開きます</div>
-		</div>
-		</transition>
+			<transition-group name="bounce" style="display: flex;">
+				<!-- いらすとや1 男の子 女の子 複数人 -->
+				<div key="hoge" v-if="ontag.includes('yanky')"></div>
+				<div key="huga" v-else class="illust-div bgil-1"  v-on:click="show2">
+					<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
+					<div style="margin-left: 1rem;">#男の子 #女の子 #複数人</div>
+					<div style="color: red; margin-left: 1rem;">※クリックで動画が開きます</div>
+				</div>
 
-		<transition name="bounce">
-		<!-- いらすとや2 男の子 ヤンキー 複数人 -->
-		<div key="1" v-if="ontag.includes('onnanoko')"></div>
-		<div key="2" v-else class="illust-div bgil-2"  v-on:click="show3">
-			<div class="live"><span class="liveicon">Live</span>3000人視聴中</div>
-			<div style="margin-left: 1rem;">#男の子 #ヤンキー</div>
-			<div style="color: red; margin-left: 1rem;">※クリックで動画が開きます</div>
-		</div>
-		</transition>
+				<!-- いらすとや2 男の子 ヤンキー 複数人 -->
+				<div key="1" v-if="ontag.includes('onnanoko')"></div>
+				<div key="2" v-else class="illust-div bgil-2"  v-on:click="show3">
+					<div class="live"><span class="liveicon">Live</span>3000人視聴中</div>
+					<div style="margin-left: 1rem;">#男の子 #ヤンキー</div>
+					<div style="color: red; margin-left: 1rem;">※クリックで動画が開きます</div>
+				</div>
 
-		<!-- いらすとや3 女の子 -->
-		<transition name="bounce">
-		<div key="3" v-if="ontag.includes('otokonoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
-		<div key="4" v-else class="illust-div bgil-3">
-			<div class="live"><span class="liveicon">Live</span>500人視聴中</div>
-			<div style="margin-left: 1rem;">#女の子</div>
-		</div>
-		</transition>
+				<!-- いらすとや3 女の子 -->
+				<div key="3" v-if="ontag.includes('otokonoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
+				<div key="4" v-else class="illust-div bgil-3">
+					<div class="live"><span class="liveicon">Live</span>500人視聴中</div>
+					<div style="margin-left: 1rem;">#女の子</div>
+				</div>
 
-		<!-- いらすとや4 女の子 !特殊 -->
-		<transition name="bounce">
-		<div key="5" v-if="ontag.includes('otokonoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
-		<div key="6" v-else class="illust-div bgil-4">
-			<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
-			<p style="margin-left: 1rem;">#女の子</p>
-		</div>
-		</transition>
 
-		<!-- いらすとや5 女の子 -->
-		<transition name="bounce">
-		<div key="7" v-if="ontag.includes('otokonoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
-		<div key="8" v-else class="illust-div bgil-5">
-			<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
-			<p style="margin-left: 1rem;">#女の子</p>
-		</div>
-		</transition>
+				<!-- いらすとや4 女の子 !特殊 -->
+				<div key="5" v-if="ontag.includes('otokonoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
+				<div key="6" v-else class="illust-div bgil-4">
+					<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
+					<p style="margin-left: 1rem;">#女の子</p>
+				</div>
 
-		<!-- いらすとや6 女の子 複数人 -->
-		<transition name="bounce">
-		<div key="9" v-if="ontag.includes('otokonoko') || ontag.includes('yanky')"></div>
-		<div key="10" v-else class="illust-div bgil-6">
-			<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
-			<p style="margin-left: 1rem;">#女の子 #複数人</p>
-		</div>
-		</transition>
+				<!-- いらすとや5 女の子 -->
+				<div key="7" v-if="ontag.includes('otokonoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
+				<div key="8" v-else class="illust-div bgil-5">
+					<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
+					<p style="margin-left: 1rem;">#女の子</p>
+				</div>
 
-		<!-- いらすとや7 男の子 -->
-		<transition name="bounce">
-		<div key="11" v-if="ontag.includes('onnanoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
-		<div key="12" v-else class="illust-div bgil-7">
-			<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
-			<p style="margin-left: 1rem;">#男の子</p>
-		</div>
-		</transition>
+
+				<!-- いらすとや6 女の子 複数人 -->
+				<div key="9" v-if="ontag.includes('otokonoko') || ontag.includes('yanky')"></div>
+				<div key="10" v-else class="illust-div bgil-6">
+					<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
+					<p style="margin-left: 1rem;">#女の子 #複数人</p>
+				</div>
+
+				<!-- いらすとや7 男の子 -->
+				<div key="11" v-if="ontag.includes('onnanoko') || ontag.includes('hukusuunim') || ontag.includes('yanky')"></div>
+				<div key="12" v-else class="illust-div bgil-7">
+					<div class="live"><span class="liveicon">Live</span>1000人視聴中</div>
+					<p style="margin-left: 1rem;">#男の子</p>
+				</div>
+			</transition-group>
 		</v-slide-group>
 		
 
@@ -292,16 +282,20 @@ export default {
 }
 
 
-.transition-duration05s {
-	transition-duration: 0.5s;
+.v-item-group {
+	width: 100%!important;
 }
+
+
 
 .bounce-enter-active {
   animation: bounce-in .5s;
 }
-.bounce-leave-active {
-  animation: bounce-in .5s reverse;
+
+.bounce-leave-to {
+	opacity: 0;
 }
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);
@@ -312,5 +306,13 @@ export default {
   100% {
     transform: scale(1);
   }
+}
+
+.bounce-move {
+  transition: transform 1s;
+}
+
+.bounce-leave-active {
+  position: absolute;
 }
 </style>
